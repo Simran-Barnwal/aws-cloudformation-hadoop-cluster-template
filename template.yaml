@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: 2010-09-09
+AWSTemplateFormatVersion: 2020-05-11
 Description: A 3-node Hadoop cluster and its associated security groups
 Parameters:
   VPNPublicIP:
@@ -14,15 +14,15 @@ Parameters:
   MasterInstanceType:
     Description: EC2 instance type for Master node
     Type: String
-    Default: t3.medium
+    Default: t2.micro
   SlaveInstanceType:
     Description: EC2 instance type for Slave nodes
     Type: String
-    Default: t3.medium
+    Default: t2.micro
   BaseImage:
     Description: Image ID for creating instance
     Type: String
-    Default: ami-08d658f84a6d84a80  # Ubuntu Server 18.04 LTS x86_64
+    Default: ami-039a49e70ea773ffc  # Ubuntu Server 16.04 LTS x86_64
 Resources:
   MasterNode:
     Type: AWS::EC2::Instance
